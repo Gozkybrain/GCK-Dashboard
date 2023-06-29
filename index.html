@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard - SB Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">
+            <img src="./assets/img/v44_566.png" alt="" style="width: 80%;">
+        </a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+
+
+
+
+
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
+                    aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i
+                        class="fas fa-search"></i></button>
+            </div>
+        </form>
+
+
+        <!-- Navbar-->
+        <!-- == ADDING USER INFO IE NAME AND IMAGE -->
+        <font style="color: #fff; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 10px; font-weight: 600;">Gee Brain</font>
+        <img src="./assets/img/gozkkyy.png" style="width: 60px;">
+
+
+
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as: <b>Gee Brain</b></div>
+
+                    <a class="nav-link" href="./login.html" style="color: red; padding-top: 12px;">
+                        <i class="fas fa-arrow-right-from-bracket"></i>
+                        Logout
+                    </a>
+                </div>
+
+
+
+
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <br><br><br>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+
+
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-upload"></i></div>
+                            Recent Uploads
+                        </a>
+
+
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user-plus"></i></div>
+                            Approved
+                        </a>
+
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user-cog"></i></div>
+                            Help & Support
+                        </a>
+
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                            Financial Report
+                        </a>
+
+
+
+                    </div>
+                    <!-- <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as: <b>Gee Brain</b></div>
+                   
+                   <a class="nav-link" href="#" style="color: red; padding-top: 12px;">
+                    <i class="fas fa-arrow-right-from-bracket"></i>
+                    Logout
+                </a>
+                </div> -->
+
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Dashboard</h1>
+
+
+
+                    <!-- ! COMPLEx MODAL HERE -->
+                    <div style="text-align: right;">
+                        <button type="button" class="btn btn- primary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg" style="background-color: #106a67; color: #fff;">
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i> Upload Receipt</button>
+                    </div>
+
+
+                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content" style="padding: 20px;">
+                            
+                                <div class="container">
+                                    <form id="myForm" onsubmit="showSuccessModal(event)">
+                                      <div class="form-group">
+                                        <label for="fullName">Full Name:</label>
+                                        <input type="text" class="form-control" id="fullName" name="fullName" required>
+                                      </div>
+                                
+                                      <div class="form-group">
+                                        <label for="date">Date:</label>
+                                        <input type="date" class="form-control" id="date" name="date" required>
+                                      </div>
+                                
+                                      <div class="form-group">
+                                        <label for="description">Description:</label>
+                                        <textarea class="form-control" id="description" name="description" required></textarea>
+                                      </div>
+                                
+                                      <div class="form-group">
+                                        <label for="paymentMethod">Payment Method:</label>
+                                        <select class="form-control" id="paymentMethod" name="paymentMethod" required>
+                                          <option value="">Select Payment Method</option>
+                                          <option value="creditCard">Credit Card</option>
+                                          <option value="paypal">PayPal</option>
+                                          <option value="bankTransfer">Bank Transfer</option>
+                                        </select>
+                                      </div>
+                                
+                                      <div class="form-group">
+                                        <label for="receiptId">Receipt ID:</label>
+                                        <input type="text" class="form-control" id="receiptId" name="receiptId" required>
+                                      </div>
+                                
+                                     <div style="text-align: center;">
+                                        <button type="submit" class="btn" style="background-color: #106a67; color: #fff;">Upload</button>
+                                        <button type="button" class="btn btn-secondary" onclick="viewUploads()">View Uploads</button>
+                                     </div>
+                                    </form>
+                                  </div>
+                                
+                                  <!-- Success Modal -->
+                                  <div id="successModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="successModalLabel">Success</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                          <i class="fas fa-check-circle fa-5x text-success mb-4"></i>
+                                          <h4>Upload Successful!</h4>
+                                          <p>Thank you for submitting your information.</p>
+                                          <p>Please remember to save your uploaded files for future reference.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+
+                                  <script>
+                                    function showSuccessModal(event) {
+                                      event.preventDefault(); // Prevent form submission
+                                
+                                      // Hide the form
+                                      document.getElementById("myForm").style.display = "none";
+                                
+                                      // Show the success modal
+                                      $("#successModal").modal("show");
+                                    }
+                                
+                                    function goBack() {
+                                      // Reload the page to go back to the form
+                                      location.reload();
+                                    }
+                                
+                                    function viewUploads() {
+                                      // Code to view uploads goes here
+                                      alert("View Uploads clicked!");
+                                    }
+                                  </script>
+
+
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ! MODAL ENDS HERE -->
+
+
+
+
+                    <ol class="bread crumb mb-4">
+                        Transaction Summary
+                    </ol>
+
+
+                    <div class="container">
+                        <div class="row">
+                          <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card">
+                              <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                  <i class="fas fa-cloud-upload-alt fa-3x mr-3" style="color: #106a67;"></i>
+                                  <div>
+                                    <h5 class="card-title">Uploads</h5>
+                                    <p class="card-text" style="font-size: 45px; font-weight: 600; color: #106a67;">293</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Approved -->
+                          <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card">
+                              <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                  <i class="fas fa-check-circle fa-3x mr-3" style="color: #106a67;"></i>
+                                  <div>
+                                    <h5 class="card-title">Approved</h5>
+                                    <p class="card-text" style="font-size: 45px; font-weight: 600; color: #106a67;">193</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Rejected -->
+                          <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card">
+                              <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                  <i class="fas fa-times-circle fa-3x mr-3" style="color: #106a67;"></i>
+                                  <div>
+                                    <h5 class="card-title">Rejected</h5>
+                                    <p class="card-text" style="font-size: 45px; font-weight: 600; color: #106a67;">90</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Unreconciled -->
+                          <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card">
+                              <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                  <i class="fas fa-exclamation-circle fa-3x mr-3" style="color: #106a67;"></i>
+                                  <div>
+                                    <h5 class="card-title">Unreconciled</h5>
+                                    <p class="card-text" style="font-size: 45px; font-weight: 600; color: #106a67;">10</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+
+
+                    
+                   
+                    <!-- <div class="row">
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-area me-1"></i>
+                                    Area Chart Example
+                                </div>
+                                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-bar me-1"></i>
+                                    Bar Chart Example
+                                </div>
+                                <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                            </div>
+                        </div>
+                    </div> -->
+          
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            DataTable Example
+                        </div>
+                        <div class="card-body">
+                            <table id="datatablesSimple">
+                       <thead>
+                        <tr>
+                            <th>Transaction Date</th>
+                            <th>Guck Zones</th>
+                            <th>Receipt ID</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                          </tr>
+                       </thead>
+                        <tr>
+                          <td>2023-05-01</td>
+                          <td>Zone A</td>
+                          <td>123456</td>
+                          <td>$50.00</td>
+                          <td>Success</td>
+                        </tr>
+                        <tr>
+                          <td>2023-04-30</td>
+                          <td>Zone C</td>
+                          <td>654321</td>
+                          <td>$25.00</td>
+                          <td>Pending</td>
+                        </tr>
+                        <tr>
+                          <td>2023-05-05</td>
+                          <td>Zone B</td>
+                          <td>789012</td>
+                          <td>$75.00</td>
+                          <td>Success</td>
+                        </tr>
+                        <tr>
+                          <td>2023-05-02</td>
+                          <td>Zone D</td>
+                          <td>345678</td>
+                          <td>$30.00</td>
+                          <td>Success</td>
+                        </tr>
+                        <tr>
+                          <td>2023-04-29</td>
+                          <td>Zone E</td>
+                          <td>901234</td>
+                          <td>$15.00</td>
+                          <td>Failed</td>
+                        </tr>
+                        <tr>
+                          <td>2023-05-03</td>
+                          <td>Zone A</td>
+                          <td>567890</td>
+                          <td>$40.00</td>
+                          <td>Pending</td>
+                        </tr>
+                        <tr>
+                          <td>2023-05-04</td>
+                          <td>Zone C</td>
+                          <td>432109</td>
+                          <td>$20.00</td>
+                          <td>Success</td>
+                        </tr>
+                        <tr>
+                          <td>2023-05-06</td>
+                          <td>Zone B</td>
+                          <td>876543</td>
+                          <td>$60.00</td>
+                          <td>Pending</td>
+                        </tr>
+                        <tr>
+                          <td>2023-05-07</td>
+                          <td>Zone D</td>
+                          <td>210987</td>
+                          <td>$35.00</td>
+                          <td>Success</td>
+                        </tr>
+                        <tr>
+                          <td>2023-05-01</td>
+                          <td>Zone E</td>
+                          <td>654321</td>
+                          <td>$25.00</td>
+                          <td>Failed</td>
+                        </tr>
+                        <tr>
+                          <td>2023-05-05</td>
+                          <td>Zone A</td>
+                          <td>789012</td>
+                          <td>$75.00</td>
+                          <td>Success</td>
+                        </tr>
+                        <tr>
+                          <td>2023-05-02</td>
+                          <td>Zone C</td>
+                          <td>345678</td>
+                          <td>$30.00</td>
+                          <td>Pending</td>
+                        </tr>
+                        <tr>
+                          <td>2023-04-30</td>
+                          <td>Zone B</td>
+                          <td>901234</td>
+                          <td>$15.00</td>
+                          <td>Success</td>
+                        </tr>
+                      </table>
+                      
+
+
+
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+</body>
+
+</html>
