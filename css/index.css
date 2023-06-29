@@ -1,0 +1,88 @@
+body{
+    background-color: #F7F7F7;
+}
+
+.okay {
+    text-align: center;
+    margin-top: 100px;
+   
+
+
+}
+#myLogo{
+    width: 30%;
+}
+
+@media only screen and (min-width: 768px) {
+     /* For desktop: */
+     #myLogo {
+        width: 14%;
+       
+    }
+}
+
+.rop {
+    padding: 10px;
+    position: absolute;
+    text-align: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 40px;
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* For desktop: */
+    .rop {
+        width: 50%;
+        margin-top: 80px;
+        padding: 20px;
+    }
+}
+
+.lop {
+    float: right;
+    /* font-size: 75%; */
+    color: #158A7D;
+
+}
+.lop:hover{
+    color: black;
+}
+
+.lop:hover {
+    text-decoration: none;
+}
+
+.bon {
+    width: 100%;
+    background-color: #158A7D;
+    border: 1px solid #F7F7F7;
+}
+.bon:hover{
+    background-color: black;
+    border: 1px solid #F7F7F7;
+}
+
+/* Forget Password start Here */
+ .con{
+    width: 100%;
+    color: rgb(135, 135, 135);
+    border: 1px solid #F7F7F7;
+    text-align: center;
+}
+.con:hover{
+    text-decoration: none;
+    color: black;
+}
+.kop{
+    text-align: center;
+}
+
+
+/* Forget Password start Here */

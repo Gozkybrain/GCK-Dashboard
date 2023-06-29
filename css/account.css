@@ -1,0 +1,49 @@
+.bon{
+    float: right;
+    
+}
+.won{
+    font-size: 60px;
+}
+#for{
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+}
+.pow{
+    margin: 20px;
+    color: red;
+}
+.top{
+    padding: 30px;
+    margin: 30px;
+    border-radius: 10px;
+}
+select{
+    width: 100%;
+    padding: 7px;
+    border-radius: 4px;
+    border: 1px solid #CED4DA;
+   
+}
+.aon{
+    padding: 10px;
+}
+.sop{
+    background-color: #158A7D;
+    border: 1px solid white;
+}
+.sop:hover{
+    background-color: black;
+    border: 1px solid white;
+}
+.rop{
+    background-color: white;
+    color:  #158A7D ;
+    border: 1px solid  #158A7D;
+}
+.rop:hover{
+    background-color: black;
+    border: 1px solid white;
+}
