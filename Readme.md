@@ -1,5 +1,5 @@
-#  A PAYMENT APP
-This web app will serve as payment system where the user can go and get money.
+#  An Upload Dashboard for Invopice
+This web app will serve as payment system where invoice will be generated.
 
 ## Design Concept
 This web app will be responsive to Moblie and Desktop alike and  have a series of pages. Which are:
@@ -47,4 +47,4 @@ This web page is all about payment system and in this page their will be at leas
 ** NOTE THAT THE MODAL CONTENT SHOULD BE PLACED AT THE BUTTOM OF THE CODD CLOST TO SCRIPT, FINALLY COMMENT YOUR CODE AS YOU GO.
 
 ## General Overview
-
+This is the official project for the GCK Event, and has been uploaded just for storage sake.
